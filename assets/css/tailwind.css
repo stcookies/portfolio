@@ -1,3 +1,19 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+
+@screen sm {
+  .my-container {
+    @apply w-11/12;
+  }
+}
+@screen md {
+  .my-container {
+    @apply w-4/5;
+  }
+}
+@screen lg {
+  .my-container {
+    @apply w-2/3;
+  }
+}
+@tailwind utilities;
