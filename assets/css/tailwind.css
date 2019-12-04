@@ -1,6 +1,24 @@
 @tailwind base;
 @tailwind components;
 
+.btn {
+  @apply inline-block px-16 py-4 text-white font-semibold rounded-lg;
+}
+.btn:focus {
+  @apply outline-none shadow-outline;
+}
+.btn-primary {
+  @apply shadow-md bg-indigo-600;
+}
+.btn-primary:hover {
+  @apply bg-indigo-500;
+}
+.btn-secondary {
+  @apply bg-gray-600;
+}
+.btn-secondary:hover {
+  @apply bg-gray-500;
+}
 @screen sm {
   .my-container {
     @apply w-11/12;
@@ -14,6 +32,11 @@
 @screen lg {
   .my-container {
     @apply w-2/3;
+  }
+}
+@screen xl {
+  .my-container {
+    @apply max-w-6xl;
   }
 }
 @tailwind utilities;

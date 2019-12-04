@@ -12,13 +12,13 @@
           </button>
         </div>
       </div>
-      <nav :class="isOpen ? 'block' : 'hidden'" class="py-4 px-4 sm:py-0 sm:block">
+      <nav :class="isOpen ? 'block' : 'hidden'" class="py-4 px-8 sm:py-0 sm:block">
         <div class="text-white font-semibold sm:flex">
-          <a href="#" class="block sm:px-4 hover:text-gray-400">About Me</a>
+          <a href="#" class="block sm:px-4 hover:text-indigo-300">About Me</a>
           <span class="hidden sm:block sm:px-1 cursor-default">/</span>
-          <a href="#" class="block py-3 sm:py-0 sm:px-4 hover:text-gray-400">My Work</a>
+          <a href="#" class="block py-3 sm:py-0 sm:px-4 hover:text-indigo-300">My Work</a>
           <span class="hidden sm:block sm:px-1 cursor-default">/</span>
-          <a href="#" class="block sm:px-4 hover:text-gray-400">Contact</a>
+          <a href="#" class="block sm:px-4 hover:text-indigo-300">Contact</a>
         </div>
       </nav>
     </header>
