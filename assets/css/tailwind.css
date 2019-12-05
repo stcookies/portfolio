@@ -10,6 +10,9 @@
 .btn-primary {
   @apply shadow-md bg-indigo-600;
 }
+.my-container {
+  @apply px-8;
+}
 .btn-primary:hover {
   @apply bg-indigo-500;
 }

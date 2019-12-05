@@ -6,6 +6,9 @@
 */
 module.exports = {
   theme: {
+    inset: {
+      '-12': '-3rem'
+    },
     extend: {
       spacing: {
         '1/2': '50%',

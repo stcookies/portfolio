@@ -1,8 +1,5 @@
 <template>
   <footer class="border-t border-indigo-500 bg-gray-900">
-    <div class="h-32">
-
-    </div>
     <div class="bg-black py-3 px-4 flex justify-center items-center text-center text-white text-xs font-semibold">
       <span>Built in 
         <a class="text-indigo-400 hover:text-indigo-300 font-bold" href="https://cincinnatiusa.com/">Cincinnati, Ohio 📍</a> with
