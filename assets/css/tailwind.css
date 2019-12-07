@@ -10,9 +10,6 @@
 .btn-primary {
   @apply shadow-md bg-indigo-600;
 }
-.my-container {
-  @apply px-8;
-}
 .btn-primary:hover {
   @apply bg-indigo-500;
 }
@@ -21,6 +18,9 @@
 }
 .btn-secondary:hover {
   @apply bg-gray-500;
+}
+.my-container {
+  @apply px-8 w-full;
 }
 @screen sm {
   .my-container {
