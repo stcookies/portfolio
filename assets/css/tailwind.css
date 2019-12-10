@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-
 .btn {
   @apply inline-block px-16 py-4 text-white font-semibold rounded;
 }

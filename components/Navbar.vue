@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <header class="my-container fixed z-30 left-0 right-0 sm:inset-auto bg-gray-900 py-4 px-1 shadow-2xl sm:flex sm:justify-between sm:items-center sm:mt-8 sm:py-5 sm:rounded-full">
+    <header class="my-container z-30 left-0 right-0 sm:inset-auto bg-gray-900 py-4 px-1 shadow-2xl sm:flex sm:justify-between sm:items-center sm:mt-8 sm:py-5 sm:rounded-full">
       <div class="px-8 flex items-center justify-between">
         <a href="#" class="text-2xl sm:text-lg text-white font-semibold">Stephen Cook</a>
         <div class="sm:hidden">
