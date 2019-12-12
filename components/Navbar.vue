@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <header class="my-container z-30 left-0 right-0 sm:inset-auto bg-gray-900 py-4 px-1 shadow-2xl sm:flex sm:justify-between sm:items-center sm:mt-8 sm:py-5 sm:rounded-full">
+    <header class="my-container bg-gray-900 py-4 px-1 shadow-2xl sm:flex sm:justify-between sm:items-center sm:mt-8 sm:py-5 sm:rounded-full">
       <div class="px-8 flex items-center justify-between">
         <a href="#" class="text-2xl sm:text-lg text-white font-semibold">Stephen Cook</a>
         <div class="sm:hidden">
@@ -18,7 +18,7 @@
           <span class="hidden sm:block sm:px-1 cursor-default">/</span>
           <a href="#" class="block py-3 sm:py-0 sm:px-4 hover:text-indigo-300">My Work</a>
           <span class="hidden sm:block sm:px-1 cursor-default">/</span>
-          <a href="#" class="block sm:px-4 hover:text-indigo-300">Contact</a>
+          <a href="#" v-scroll-to="'#contact'" class="block sm:px-4 hover:text-indigo-300">Contact</a>
         </div>
       </nav>
     </header>
