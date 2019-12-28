@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-700 shadow-xl">
+    <section class="bg-gray-700">
       <div class="my-container mx-auto">
         <div class="flex justify-center flex-wrap mt-20 sm:mt-64 xl:-mx-3">
           <div v-for="(skill, index) in skillCards" :key="index" class="py-8 w-full xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
@@ -44,13 +44,13 @@
         </div>
       </div>
     </section>
-    <section class="mt-24">
+    <section class="bg-gray-700 pt-24">
       <div class="py-32 my-container mx-auto">
         <h1 class="font-semibold text-white text-4xl">Work</h1>
         <div></div>
       </div>
     </section>
-    <section class="bg-gray-700" id="contact">
+    <section class="" id="contact">
       <div class="py-12 flex flex-wrap justify-center my-container mx-auto">
         <div class="w-full md:w-1/2">
           <h1 class="font-semibold text-white text-4xl">Contact</h1>
