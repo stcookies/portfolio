@@ -10,6 +10,11 @@
 import Navbar from '~/components/Navbar';
 import Footer from '~/components/Footer';
 export default {
+  head() {
+    return {
+      title: 'Stephen Cook / Front-End Developer'
+    }
+  },
   components: {
     Navbar,
     Footer

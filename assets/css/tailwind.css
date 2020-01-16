@@ -1,13 +1,14 @@
 @tailwind base;
 @tailwind components;
+
 .btn {
-  @apply inline-block px-16 py-4 text-white font-semibold rounded;
+  @apply inline-block px-16 py-4 font-semibold text-white rounded;
 }
 .btn:focus {
-  @apply outline-none shadow-outline;
+  @apply shadow-outline outline-none;
 }
 .btn-primary {
-  @apply shadow-md bg-indigo-600;
+  @apply bg-indigo-600 shadow-md;
 }
 .btn-primary:hover {
   @apply bg-indigo-500;
@@ -19,7 +20,7 @@
   @apply bg-gray-500;
 }
 .my-container {
-  @apply px-8 w-full;
+  @apply w-full px-8;
 }
 @screen sm {
   .my-container {
@@ -41,4 +42,5 @@
     @apply max-w-6xl;
   }
 }
+
 @tailwind utilities;
