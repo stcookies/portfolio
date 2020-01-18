@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       spacing: {
-
+        'half': '5%'
       }
     }
   },

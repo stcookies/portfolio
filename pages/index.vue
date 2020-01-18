@@ -29,7 +29,7 @@
     <section class="bg-gray-700">
       <div class="mx-auto my-container">
         <div class="flex flex-wrap justify-center mt-20 sm:mt-64 xl:-mx-3">
-          <div v-for="(skill, index) in skillCards" :key="index" class="w-full py-8 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
+          <div v-for="(skill, index) in skillCards" :key="index" class="w-full max-w-sm px-2 py-8 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
             <div class="relative flex justify-center h-full px-4 py-16 bg-white border-t-8 border-indigo-600 rounded shadow-xl">
               <div class="absolute flex items-center justify-center w-24 h-24 bg-indigo-600 rounded-full shadow-2xl -top-12">
                 <img class="w-10 h-10" :src="require('~/assets/img/' + skill.icon + '.svg')">
@@ -46,29 +46,31 @@
     </section>
     <section class="pt-10 pb-20 bg-gray-700">
       <div class="pb-10 mx-auto my-container">
-        <h1 class="text-4xl font-semibold text-white">My Work</h1>
-        <div class="relative flex mt-10 rounded">
-          <div class="z-10 w-3/5">
-            <img class="object-cover w-full h-full rounded" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80" />
-          </div>
-          <div class="absolute z-40 w-3/5" style="bottom: -50px; right: 0">
-            <div class="p-8 bg-gray-800 rounded shadow-xl">
-              <span class="text-2xl font-semibold text-white">Warcraft Market</span>
-              <p class="pt-4 text-lg text-indigo-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat doloremque, laborum enim eveniet nisi quaerat itaque sequi harum veritatis impedit quos iure dolorem cupiditate officia debitis nobis id corporis vitae! Sapiente, laudantium. Omnis quae earum nam, perferendis similique sit nemo nulla officiis sequi perspiciatis reprehenderit illum inventore! At, atque necessitatibus?.</p>
-              <span class="block pt-5 text-xs font-semibold text-white uppercase">Vue / Nuxt / Bootstrap-vue / Node / Express</span>
+        <h1 class="pb-4 text-4xl font-semibold text-white">My Work</h1>
+        <div v-for="(project, index) in projects" :key="index">
+          <div class="relative flex items-center hidden pb-16 rounded xl:flex">
+            <div class="z-10 w-3/5">
+              <img class="object-cover w-full h-full rounded" :src="project.img" />
+            </div>
+            <div class="absolute z-40 w-3/5" style="right: 0">
+              <div class="p-8 bg-gray-800 rounded shadow-xl">
+                <span class="text-2xl font-semibold text-white">{{ project.title }}</span>
+                <p class="pt-4 text-lg text-indigo-300">{{ project.description }}</p>
+                <a v-if="project.link" class="block pt-3 font-semibold text-white cursor-pointer hover:text-indigo-200" :href="project.link" target="_blank">View Project &#8594;</a>
+                <span class="block pt-6 text-xs font-semibold text-white uppercase">{{ project.technologies }}</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="relative flex mt-32 rounded">
-          <div class="absolute z-40 w-3/5" style="bottom: -50px; right: 0">
-            <div class="p-8 bg-gray-800 rounded shadow-xl">
-              <span class="text-2xl font-semibold text-white">Weather Dash</span>
-              <p class="pt-4 text-lg text-indigo-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat doloremque, laborum enim eveniet nisi quaerat itaque sequi harum veritatis impedit quos iure dolorem cupiditate officia debitis nobis id corporis vitae! Sapiente, laudantium. Omnis quae earum nam, perferendis similique sit nemo nulla officiis sequi perspiciatis reprehenderit illum inventore! At, atque necessitatibus?.</p>
-              <span class="block pt-5 text-xs font-semibold text-white uppercase">React / Tailwind CSS / Netlify Functions / Mapquest & Darksky API</span>
+          <div class="xl:hidden">
+            <div class="w-auto h-full pb-6">
+              <img class="rounded-t object-fit" :src="project.img" />
+              <div class="flex flex-col justify-center w-full h-full p-8 rounded-b" style="top: 0; background-color: rgba(26, 32, 44, 0.75)">
+                <span class="text-3xl font-semibold text-white">{{ project.title }}</span>
+                <p class="pt-4 text-lg text-indigo-300">{{ project.description }}</p>
+                <a v-if="project.link" class="block pt-3 font-semibold text-white cursor-pointer hover:text-indigo-200" :href="project.link" target="_blank">View Project &#8594;</a>
+                <span class="block pt-6 text-xs font-semibold text-white uppercase">{{ project.technologies }}</span>
+              </div>
             </div>
-          </div>
-          <div class="z-10 w-3/5">
-            <img class="object-cover w-full h-full rounded" src="https://images.unsplash.com/photo-1553984840-ec965a23cddd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80" />
           </div>
         </div>
       </div>
@@ -136,6 +138,12 @@ export default {
           body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quibusdam voluptates sapiente porro.',
           technologies: 'Mocha / Chai / RSpec'
         }
+      ],
+      projects: [
+        { title: 'Software Developer @ InMobi', technologies: 'jQuery / Ruby on Rails / RSpec / Vue / MySQL', img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit temporibus sed dolores consequuntur maxime reprehenderit illum omnis est dignissimos?' },
+        { title: 'Warcraft Market', technologies: 'Vue / Nuxt / Bootstrap-Vue / MongoDB / Node / Express', link: 'https://www.warcraftmarket.com', img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'Started as a passion project forged from my love of World of Warcraft, Warcraft Market is a middleman service that connects buyers of in-game items and services with teams of professional players that can fulfill the clients needs.' },
+        { title: 'Weather Dash', technologies: 'React / Tailwind CSS / Netlify Functions / Mapquest & Darksky API', link: 'https://www.weatherdash.app', img: 'https://images.unsplash.com/photo-1553984840-ec965a23cddd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: ' A better browser start page with a focus on the weather in your area. Weather data is provided by the wonderful DarkSky API, geolocation and location search ahead results courtesy of MapQuest’s API.' },
+        { title: 'Trip Me', technologies: 'Vue / Tailwind CSS', link: 'https://trip-me.netlify.com', img: 'https://images.unsplash.com/photo-1553984840-ec965a23cddd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'A landing page for a mock travel agency, Trip Me, that provides pre-packaged trip itineraries for clients. The page is fully responsive with design considerations taken into account for every screen size.' }
       ]
     }
   }
