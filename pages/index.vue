@@ -29,15 +29,42 @@
     <section class="bg-gray-700">
       <div class="mx-auto my-container">
         <div class="flex flex-wrap justify-center mt-20 sm:mt-64 xl:-mx-3">
-          <div v-for="(skill, index) in skillCards" :key="index" class="w-full max-w-sm px-2 py-8 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
-            <div class="relative flex justify-center h-full px-4 py-16 bg-white border-t-8 border-indigo-600 rounded shadow-xl">
-              <div class="absolute flex items-center justify-center w-24 h-24 bg-indigo-600 rounded-full shadow-2xl -top-12">
-                <img class="w-10 h-10" :src="require('~/assets/img/' + skill.icon + '.svg')">
+          <div class="w-full py-3 lg:px-2 sm:-mt-32 xl:py-10 xl:w-1/3 xl:px-3">
+            <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl">
+              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
+                <defs/>
+                <path d="M20.59 12l-3.3-3.3a1 1 0 111.42-1.4l4 4a1 1 0 010 1.4l-4 4a1 1 0 01-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 01-1.42 1.4l-4-4a1 1 0 010-1.4l4-4A1 1 0 016.7 8.7L3.4 12zm7.56 8.24a1 1 0 01-1.94-.48l4-16a1 1 0 111.94.48l-4 16z" class="heroicon-ui"/>
+              </svg>
+              <div class="relative z-50 flex flex-col items-center justify-between h-full px-4 py-12 text-center">
+                <span class="text-xl font-semibold tracking-wide text-white uppercase">Front-End Development</span>
+                <p class="max-w-lg pt-6 pb-12 font-semibold text-indigo-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error possimus optio itaque cum ab impedit voluptatibus vitae vero repudiandae. Dignissimos voluptate cumque maxime veniam exercitationem odio placeat nobis aspernatur dicta?</p>
+                <span class="text-xs font-bold text-center text-white uppercase">JavaScript / Vue / Nuxt / React / HTML5 / CSS3</span>
               </div>
-              <div class="flex flex-col items-center pt-2 text-center">
-                <span class="text-2xl font-semibold text-gray-800">{{ skill.name }}</span>
-                <p class="max-w-sm py-8 text-gray-700 lg:max-w-lg xl:max-w-xl">{{ skill.body }}</p>
-                <span class="text-xs font-semibold text-center text-indigo-500 uppercase">{{ skill.technologies }}</span>
+            </div>
+          </div>
+          <div class="w-full py-3 lg:px-2 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
+            <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl">
+              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
+                <defs/>
+                <path d="M9 4.58V4c0-1.1.9-2 2-2h2a2 2 0 012 2v.58a8 8 0 011.92 1.11l.5-.29a2 2 0 012.74.73l1 1.74a2 2 0 01-.73 2.73l-.5.29a8.06 8.06 0 010 2.22l.5.3a2 2 0 01.73 2.72l-1 1.74a2 2 0 01-2.73.73l-.5-.3A8 8 0 0115 19.43V20a2 2 0 01-2 2h-2a2 2 0 01-2-2v-.58a8 8 0 01-1.92-1.11l-.5.29a2 2 0 01-2.74-.73l-1-1.74a2 2 0 01.73-2.73l.5-.29a8.06 8.06 0 010-2.22l-.5-.3a2 2 0 01-.73-2.72l1-1.74a2 2 0 012.73-.73l.5.3A8 8 0 019 4.57zM7.88 7.64l-.54.51-1.77-1.02-1 1.74 1.76 1.01-.17.73a6.02 6.02 0 000 2.78l.17.73-1.76 1.01 1 1.74 1.77-1.02.54.51a6 6 0 002.4 1.4l.72.2V20h2v-2.04l.71-.2a6 6 0 002.41-1.4l.54-.51 1.77 1.02 1-1.74-1.76-1.01.17-.73a6.02 6.02 0 000-2.78l-.17-.73 1.76-1.01-1-1.74-1.77 1.02-.54-.51a6 6 0 00-2.4-1.4l-.72-.2V4h-2v2.04l-.71.2a6 6 0 00-2.41 1.4zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z" class="heroicon-ui"/>
+              </svg>
+              <div class="relative z-50 flex flex-col items-center justify-between h-full px-4 py-12 text-center">
+                <span class="text-xl font-semibold tracking-wide text-white uppercase">Back-End Development</span>
+                <p class="max-w-lg pt-6 pb-12 font-semibold text-gray-800 text-indigo-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error possimus optio itaque cum ab impedit voluptatibus vitae vero repudiandae. Dignissimos voluptate cumque maxime veniam exercitationem odio placeat nobis aspernatur dicta?</p>
+                <span class="text-xs font-bold text-center text-white uppercase">Node / Express / Rails / MongoDB / MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="w-full py-3 lg:px-2 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-32">
+            <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl">
+              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
+                <defs/>
+                <path d="M12.76 3.76a6 6 0 018.48 8.48l-8.53 8.54a1 1 0 01-1.42 0l-8.53-8.54a6 6 0 018.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 10-5.66-5.66l-1.46 1.47a1 1 0 01-1.42 0L9.83 5.17a4 4 0 10-5.66 5.66L12 18.66l7.83-7.83z" class="heroicon-ui"/>
+              </svg>
+              <div class="relative z-50 flex flex-col items-center justify-between h-full px-4 py-12 text-center">
+                <span class="text-xl font-semibold tracking-wide text-white uppercase">Well Tested Code</span>
+                <p class="max-w-lg pt-6 pb-12 font-semibold text-indigo-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse in autem ad quaerat similique cupiditate voluptates, harum voluptate perspiciatis nisi eaque eius facere, ex laborum quas ratione natus corporis excepturi!</p>
+                <span class="text-xs font-bold text-center text-white uppercase">Mocha / Chai / RSpec</span>
               </div>
             </div>
           </div>
@@ -48,11 +75,11 @@
       <div class="pb-10 mx-auto my-container">
         <h1 class="pb-4 text-4xl font-semibold text-white">My Work</h1>
         <div v-for="(project, index) in projects" :key="index">
-          <div class="relative flex items-center hidden pb-16 rounded xl:flex">
+          <div class="relative flex items-center hidden pb-20 rounded xl:flex">
             <div class="z-10 w-3/5">
-              <img class="object-cover w-full h-full rounded" :src="project.img" />
+              <img class="rounded-t object-fit" :src="require('~/assets/img/' + project.img + '-xl.jpg')" />
             </div>
-            <div class="absolute z-40 w-3/5" style="right: 0">
+            <div class="absolute z-40 w-3/5 pl-16" style="right: 0">
               <div class="p-8 bg-gray-800 rounded shadow-xl">
                 <span class="text-2xl font-semibold text-white">{{ project.title }}</span>
                 <p class="pt-4 text-lg text-indigo-300">{{ project.description }}</p>
@@ -61,10 +88,10 @@
               </div>
             </div>
           </div>
-          <div class="xl:hidden">
-            <div class="w-auto h-full pb-6">
-              <img class="rounded-t object-fit" :src="project.img" />
-              <div class="flex flex-col justify-center w-full h-full p-8 rounded-b" style="top: 0; background-color: rgba(26, 32, 44, 0.75)">
+          <div class="flex justify-center xl:hidden">
+            <div class="my-5 overflow-hidden bg-gray-800 rounded">
+              <img class="object-cover w-full" :src="require('~/assets/img/' + project.img + '.jpg')" />
+              <div class="flex flex-col justify-center px-10 pt-5 pb-10">
                 <span class="text-3xl font-semibold text-white">{{ project.title }}</span>
                 <p class="pt-4 text-lg text-indigo-300">{{ project.description }}</p>
                 <a v-if="project.link" class="block pt-3 font-semibold text-white cursor-pointer hover:text-indigo-200" :href="project.link" target="_blank">View Project &#8594;</a>
@@ -75,7 +102,7 @@
         </div>
       </div>
     </section>
-    <section class="" id="contact">
+    <section id="contact">
       <div class="flex flex-wrap justify-center py-12 mx-auto my-container">
         <div class="w-full lg:w-1/3 xl:w-1/2">
           <h1 class="text-4xl font-semibold text-white">Contact</h1>
@@ -119,31 +146,11 @@ export default {
   },
   data() {
     return {
-      skillCards: [
-        {
-          icon: 'code',
-          name: 'Front-End Development',
-          body: 'I have a strong passion for crafting elegant, responsive, and performant user interfaces with the latest technologies.',
-          technologies: 'JavaScript / Vue / Nuxt / React / HTML5 / CSS3'
-        },
-        {
-          icon: 'cog',
-          name: 'Back-End Development',
-          body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quibusdam voluptates sapiente porro corporis.',
-          technologies: 'Node / Express / Rails / MongoDB / MySQL'
-        },
-        {
-          icon: 'heart',
-          name: 'Well Tested Code',
-          body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quibusdam voluptates sapiente porro.',
-          technologies: 'Mocha / Chai / RSpec'
-        }
-      ],
       projects: [
-        { title: 'Software Developer @ InMobi', technologies: 'jQuery / Ruby on Rails / RSpec / Vue / MySQL', img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit temporibus sed dolores consequuntur maxime reprehenderit illum omnis est dignissimos?' },
-        { title: 'Warcraft Market', technologies: 'Vue / Nuxt / Bootstrap-Vue / MongoDB / Node / Express', link: 'https://www.warcraftmarket.com', img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'Started as a passion project forged from my love of World of Warcraft, Warcraft Market is a middleman service that connects buyers of in-game items and services with teams of professional players that can fulfill the clients needs.' },
-        { title: 'Weather Dash', technologies: 'React / Tailwind CSS / Netlify Functions / Mapquest & Darksky API', link: 'https://www.weatherdash.app', img: 'https://images.unsplash.com/photo-1553984840-ec965a23cddd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: ' A better browser start page with a focus on the weather in your area. Weather data is provided by the wonderful DarkSky API, geolocation and location search ahead results courtesy of MapQuest’s API.' },
-        { title: 'Trip Me', technologies: 'Vue / Tailwind CSS', link: 'https://trip-me.netlify.com', img: 'https://images.unsplash.com/photo-1553984840-ec965a23cddd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=80', description: 'A landing page for a mock travel agency, Trip Me, that provides pre-packaged trip itineraries for clients. The page is fully responsive with design considerations taken into account for every screen size.' }
+        { title: 'Software Developer @ InMobi', technologies: 'jQuery / Ruby on Rails / RSpec / Vue / MySQL', img: 'inmobi', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit temporibus sed dolores consequuntur maxime reprehenderit illum omnis est dignissimos?' },
+        { title: 'Warcraft Market', technologies: 'Vue / Nuxt / Bootstrap-Vue / MongoDB / Node / Express', link: 'https://www.warcraftmarket.com', img: 'warcraftmarket', description: 'Started as a passion project forged from my love of World of Warcraft, Warcraft Market is a middleman service that connects buyers of in-game items and services with teams of professional players that can fulfill the clients needs.' },
+        { title: 'Weather Dash', technologies: 'React / Tailwind CSS / Netlify Functions / Mapquest & Darksky API', link: 'https://www.weatherdash.app', img: 'weatherdash', description: ' A better browser start page with a focus on the weather in your area. Weather data is provided by the wonderful DarkSky API, geolocation and location search ahead results courtesy of MapQuest’s API.' },
+        { title: 'Trip Me', technologies: 'Vue / Tailwind CSS', link: 'https://trip-me.netlify.com', img: 'tripme', description: 'A landing page for a mock travel agency, Trip Me, that provides pre-packaged trip itineraries for clients. The page is fully responsive with design considerations taken into account for every screen size.' }
       ]
     }
   }

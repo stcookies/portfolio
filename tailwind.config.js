@@ -6,9 +6,6 @@
 */
 module.exports = {
   theme: {
-    inset: {
-      '-12': '-3.3rem'
-    },
     minHeight: {
       '0': '0',
       '1/4': '25%',
@@ -18,7 +15,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        'half': '5%'
+        'half': '5%',
+        'skill-card': '340px'
       }
     }
   },
