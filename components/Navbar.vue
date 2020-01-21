@@ -14,11 +14,13 @@
       </div>
       <nav :class="isOpen ? 'block' : 'hidden'" class="px-8 py-4 sm:py-0 sm:block">
         <div class="font-semibold text-white sm:flex">
-          <a href="#" class="block sm:px-4 hover:text-indigo-300">Experience</a>
+          <a href="#" v-scroll-to="'#about'" class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300">About</a>
           <span class="hidden cursor-default sm:block sm:px-1">/</span>
-          <a href="#" class="block py-3 sm:py-0 sm:px-4 hover:text-indigo-300">Projects</a>
+          <a href="#" v-scroll-to="'#experience'" class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300">Experience</a>
           <span class="hidden cursor-default sm:block sm:px-1">/</span>
-          <a href="#" v-scroll-to="'#contact'" class="block sm:px-4 hover:text-indigo-300">Contact</a>
+          <a href="#" v-scroll-to="'#projects'" class="block pt-3 sm:pt-0 sm:py-0 sm:px-4 hover:text-indigo-300">Projects</a>
+          <span class="hidden cursor-default sm:block sm:px-1">/</span>
+          <a href="#" v-scroll-to="'#contact'" class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300">Contact</a>
         </div>
       </nav>
     </header>
