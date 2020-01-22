@@ -12,7 +12,7 @@ import Footer from '~/components/Footer';
 export default {
   head() {
     return {
-      title: 'Stephen Cook / Front-End Developer'
+      title: 'Stephen Cook / Web Developer'
     }
   },
   components: {

@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       spacing: {
         'half': '5%',
-        'skill-card': '340px'
+        'skill-card': '375px'
       }
     }
   },
