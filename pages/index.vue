@@ -201,7 +201,7 @@ export default {
       if (process.env.NODE_ENV === 'production') {
         this.submitting = true;
         this.$axios.setHeader('Content-Type', 'application/x-www-form-urlencoded');
-        this.$axios.$post("/", this.encode({
+        this.$axios.$post("/submit", this.encode({
             "form-name": "contact",
             ...this.form
           }))
