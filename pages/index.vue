@@ -200,11 +200,13 @@ export default {
     submitContactForm() {
       if (process.env.NODE_ENV === 'production') {
         this.submitting = true;
-        this.$axios.setHeader('Content-Type', 'application/x-www-form-urlencoded');
-        this.$axios.$post("/submit", this.encode({
+        const axiosConfig = {
+          header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        this.$axios.post("/submit", this.encode({
             "form-name": "contact",
             ...this.form
-          }))
+          }), axiosConfig)
         .then(() => {
           this.submitting = false;
           this.submitSuccess = true;
