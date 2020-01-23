@@ -198,31 +198,29 @@ export default {
         .join("&");
     },
     submitContactForm() {
-      this.submitting = true;
-      setTimeout(() => {
-        this.submitting = false;
-      }, 5000);
-      /*
-      this.submitting = true;
-      const axiosConfig = {
-        header: { "Content-Type": "application/x-www-form-urlencoded" }
-      };
-      this.$axios.$post("/", this.encode({
-          "form-name": "contact",
-          ...this.form
-        }),
-        axiosConfig
-      )
-      .then(() => {
-        this.submitting = false;
-        this.submitSuccess = true;
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      */
+      if (process.env.NODE_ENV === 'production') {
+        this.submitting = true;
+        this.$axios.setHeader('Content-Type', 'application/x-www-form-urlencoded');
+        this.$axios.$post("/", this.encode({
+            "form-name": "contact",
+            ...this.form
+          }))
+        .then(() => {
+          this.submitting = false;
+          this.submitSuccess = true;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }
+      else {
+        this.submitting = true;
+        setTimeout(() => {
+          this.submitting = false;
+          this.submitSuccess = true;
+        }, 5000);
+      }
     }
-    
   }
 }
 </script>
