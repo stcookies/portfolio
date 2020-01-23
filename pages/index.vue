@@ -8,8 +8,8 @@
           <div class="hidden xl:block">
             <p class="max-w-xl pt-8 font-semibold text-indigo-300 sm:text-xl">I’m a Cincinnati, OH based developer passionate about creating everything from static sites to dynamic web apps. I received my BS in Computer Science from UC Irvine in 2016, and since then have founded my own business, Warcraft Market, and worked as a Software Developer at InMobi. I have extensive experience building apps with Vue and Node, and am always eager to learn more about emerging technologies.</p>
             <div class="pt-12">
-              <a class="mr-4 btn btn-primary" href="#" v-scroll-to="'#projects'">My Work</a>
-              <a class="btn btn-secondary" href="#" v-scroll-to="'#contact'">Contact</a>
+              <button class="mr-4 btn btn-primary" v-scroll-to="'#projects'">My Work</button>
+              <button class="btn btn-secondary" v-scroll-to="'#contact'">Contact</button>
             </div>
           </div>
         </div>
@@ -30,7 +30,10 @@
         <div class="flex flex-wrap justify-center xl:-mx-3">
           <div class="w-full py-3 lg:px-2 sm:-mt-40 xl:py-10 xl:w-1/3 xl:px-3">
             <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card">
-              <img class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" src="~/assets/img/code.svg" />
+              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
+                <defs/>
+                <path d="M20.59 12l-3.3-3.3a1 1 0 111.42-1.4l4 4a1 1 0 010 1.4l-4 4a1 1 0 01-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 01-1.42 1.4l-4-4a1 1 0 010-1.4l4-4A1 1 0 016.7 8.7L3.4 12zm7.56 8.24a1 1 0 01-1.94-.48l4-16a1 1 0 111.94.48l-4 16z" class="heroicon-ui"/>
+              </svg>
               <div class="relative z-50 flex flex-col items-center h-full px-4 py-12 text-center">
                 <span class="text-xl font-semibold tracking-wide text-white uppercase">Front-End Development</span>
                 <p class="max-w-lg my-auto font-semibold text-indigo-300">I transform any design into a pixel-perfect, responsive, and performant interface that users will love.</p>
@@ -75,13 +78,19 @@
             <div>
               <span class="block text-xl font-semibold text-white uppercase">Warcraft Market - Founder & Developer</span>
               <span class="block text-lg text-white uppercase">2013 - Present</span>
-              <p class="pt-4 text-lg text-indigo-300"> I founded Warcraft Market in 2013 to be the go-to site for any in-game item or service. The site is built with Vue / Nuxt / Bootstrap-vue on the front-end, and Node / Express on the back-end. I’m constantly working to improve the site by adding new features, and am currently working on a client login portal and rewards system. On the business side, my team and I service clients from around the globe, including North America, Europe, and Australia. We have serviced over ten-thousand customers since 2013 and continue to grow year after year.</p>
+              <div class="pt-4 text-lg text-indigo-300">
+                <p>I founded Warcraft Market in 2013 to be the go-to site for any in-game item or service. The site is built with Vue / Nuxt / Bootstrap-vue on the front-end, and Node / Express on the back-end. I’m constantly working to improve the site by adding new features, and am currently working on a client login portal and rewards system.</p>
+                <p class="pt-3"> On the business side, my team and I service clients from around the globe, including North America, Europe, and Australia. We have serviced over ten-thousand customers since 2013 and continue to grow year after year.</p>
+              </div>
             </div>
             <div class="w-full my-10 border-b border-indigo-300 opacity-25"></div>
             <div>
               <span class="block text-xl font-semibold text-white uppercase">InMobi - Software Developer</span>
               <span class="block text-lg text-white uppercase">June 2018 - June 2019</span>
-              <p class="pt-4 text-lg text-indigo-300">InMobi is a global provider of enterprise platforms for marketers. The platform enables consumers to discover new products and services by providing contextual, relevant, and curated recommendations on mobile apps and devices. At InMobi, I was responsible for maintaining and adding features to the existing platform built with Ruby on Rails and jQuery. Additionally, my team and I worked closely with UX/UI designers to build a newer and more modern platform using Vue / Node, and built out unit-tests for each feature using Mocha. Other responsibilities included assigning tickets to developers on my team, giving feedback to more junior developers, and ensuring the code being written was clean and consistent.</p>
+              <div class="pt-4 text-lg text-indigo-300">
+                <p>InMobi is a global provider of enterprise platforms for marketers. The platform enables consumers to discover new products and services by providing contextual, relevant, and curated recommendations on mobile apps and devices. At InMobi, I was responsible for maintaining and adding features to the existing platform built with Ruby on Rails and jQuery.</p>
+                <p class="pt-3">Additionally, my team and I worked closely with UX/UI designers to build a newer and more modern platform using Vue / Node, and built out unit-tests for each feature using Mocha. Other responsibilities included assigning tickets to developers on my team, giving feedback to more junior developers, and ensuring the code being written was clean and consistent.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +135,7 @@
         </div>
         <div class="w-full py-8 lg:w-2/3 xl:w-1/2">
           <div class="-mb-48">
-            <form data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
+            <form v-if="!submitting" data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
               <input type="hidden" name="form-name" value="contact" />
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
@@ -147,7 +156,7 @@
                 <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" type="text"></textarea>
               </div>
               <div class="pt-4">
-                <a @click="submitContactForm()" class="w-full text-center btn btn-primary" href="#">Submit</a>
+                <button @click="submitContactForm()" class="w-full text-center btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -190,6 +199,11 @@ export default {
     },
     submitContactForm() {
       this.submitting = true;
+      setTimeout(() => {
+        this.submitting = false;
+      }, 5000);
+      /*
+      this.submitting = true;
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
@@ -206,7 +220,9 @@ export default {
       .catch((err) => {
         console.log(err);
       })
+      */
     }
+    
   }
 }
 </script>
