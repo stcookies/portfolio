@@ -30,10 +30,7 @@
         <div class="flex flex-wrap justify-center xl:-mx-3">
           <div class="w-full py-3 lg:px-2 sm:-mt-40 xl:py-10 xl:w-1/3 xl:px-3">
             <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card">
-              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
-                <defs/>
-                <path d="M20.59 12l-3.3-3.3a1 1 0 111.42-1.4l4 4a1 1 0 010 1.4l-4 4a1 1 0 01-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 01-1.42 1.4l-4-4a1 1 0 010-1.4l4-4A1 1 0 016.7 8.7L3.4 12zm7.56 8.24a1 1 0 01-1.94-.48l4-16a1 1 0 111.94.48l-4 16z" class="heroicon-ui"/>
-              </svg>
+              <img class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" src="~/assets/img/code.svg" />
               <div class="relative z-50 flex flex-col items-center h-full px-4 py-12 text-center">
                 <span class="text-xl font-semibold tracking-wide text-white uppercase">Front-End Development</span>
                 <p class="max-w-lg my-auto font-semibold text-indigo-300">I transform any design into a pixel-perfect, responsive, and performant interface that users will love.</p>
@@ -90,7 +87,7 @@
         </div>
       </div>
     </section>
-    <section class="py-10 bg-gray-700" id="projects">
+    <section class="py-20 bg-gray-700" id="projects">
       <div class="mx-auto my-container">
         <h1 class="mb-6 text-3xl font-semibold tracking-widest text-white uppercase">Projects</h1>
         <div v-for="(project, index) in projects" :key="index" :class="{ 'mt-16': index > 0 }">
@@ -129,27 +126,28 @@
         </div>
         <div class="w-full py-8 lg:w-2/3 xl:w-1/2">
           <div class="-mb-48">
-            <form netlify name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
+            <form data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
+              <input type="hidden" name="form-name" value="contact" />
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
                   Full Name
                 </label>
-                <input class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text">
+                <input v-model="form.name" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text">
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
                   Email
                 </label>
-                <input class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" type="text">
+                <input v-model="form.email" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" type="text">
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="message">
                   Message
                 </label>
-                <textarea rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" type="text"></textarea>
+                <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" type="text"></textarea>
               </div>
               <div class="pt-4">
-                <a class="w-full text-center btn btn-primary" href="#">Submit</a>
+                <a @click="submitContactForm()" class="w-full text-center btn btn-primary" href="#">Submit</a>
               </div>
             </form>
           </div>
@@ -163,11 +161,44 @@
 export default {
   data() {
     return {
+      form: {
+        name: null,
+        email: null,
+        message: null
+      },
+      submitting: false,
+      submitSuccess: false,
+      skills: [
+        { title : 'Front-End Development', description: 'I transform any design into a pixel-perfect, responsive, and performant interface that users will love.', tech: ' JavaScript / Vue / Nuxt / React', icon: 'code' },
+        { title : 'Back-End Development', description: 'I build restful APIs, as well as work with 3rd party APIs and services to create a fast and maintainable back-end for any app.', tech: 'Node / Express / Rails / MongoDB / MySQL', icon: 'cog' },
+        { title : 'Well Tested Code', description: 'Code confidence is extremely important. That’s why I always build a robust suite of unit tests for any new feature added to a code base.', tech: 'Mocha / Chai / RSpec', icon: 'heart' },
+      ],
       projects: [
         { title: 'Warcraft Market', technologies: 'Vue / Nuxt / Bootstrap-Vue / MongoDB / Node / Express', link: 'https://www.warcraftmarket.com', img: 'warcraftmarket', description: 'Started as a passion project forged from my love of World of Warcraft, Warcraft Market is a middleman service that connects buyers of in-game items and services with teams of professional players that can fulfill the clients needs.' },
         { title: 'Weather Dash', technologies: 'React / Tailwind CSS / Netlify Functions / Mapquest & Darksky API', link: 'https://www.weatherdash.app', img: 'weatherdash', description: 'A better browser start page with a focus on the weather in your area. Weather Dash utilizes Netlify Functions to query the DarkSky & MapQuest APIs to provide weather, geolocation, and search ahead results.' },
         { title: 'Trip Me', technologies: 'Vue / Tailwind CSS', link: 'https://trip-me.netlify.com', img: 'tripme', description: 'A landing page for a mock travel agency, Trip Me, that provides pre-packaged trip itineraries for clients. The page is fully responsive with design considerations taken into account for every screen size.' }
       ]
+    }
+  },
+  methods: {
+    submitContactForm() {
+      this.submitting = true;
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      this.$axios.$post("/", this.encode({
+          "form-name": "contact",
+          ...this.form
+        }),
+        axiosConfig
+      )
+      .then(() => {
+        this.submitting = false;
+        this.submitSuccess = true;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     }
   }
 }

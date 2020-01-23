@@ -3,6 +3,12 @@
     <div class="flex flex-col py-32 mx-auto my-container">
       <span class="pt-20 text-xl text-white lg:pt-0">Stephen Cook</span>
       <span class="text-xs text-white">© Copyright 2020</span>
+      <a class="mt-3" target="_blank" href="https://www.linkedin.com/in/st-cook/">
+        <svg class="w-5 h-5 text-white fill-current hover:text-indigo-300" viewBox="0 0 24 24">
+          <defs/>
+          <path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
+        </svg>
+      </a>
       <div class="pt-5 mt-10 font-semibold text-white sm:pt-0 sm:flex">
         <a href="#" v-scroll-to="'#about'" class="block pr-4 hover:text-indigo-300">About</a>
         <span class="hidden cursor-default sm:block sm:px-1">/</span>
