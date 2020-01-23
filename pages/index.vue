@@ -135,7 +135,7 @@
         </div>
         <div class="w-full py-8 lg:w-2/3 xl:w-1/2">
           <div class="-mb-48">
-            <form v-if="!submitting" data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
+            <form @submit.prevent="handleSubmit" v-if="!submitting" data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
               <input type="hidden" name="form-name" value="contact" />
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
@@ -156,7 +156,7 @@
                 <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" type="text"></textarea>
               </div>
               <div class="pt-4">
-                <button @click="submitContactForm()" class="w-full text-center btn btn-primary">Submit</button>
+                <button type="submit" class="w-full text-center btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -197,7 +197,7 @@ export default {
         )
         .join("&");
     },
-    submitContactForm() {
+    handleSubmit() {
       if (process.env.NODE_ENV === 'production') {
         this.submitting = true;
         const axiosConfig = {
