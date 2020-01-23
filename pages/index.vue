@@ -167,6 +167,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -203,7 +204,7 @@ export default {
         const axiosConfig = {
           header: { "Content-Type": "application/x-www-form-urlencoded" }
         };
-        this.$axios.post("/submit", this.encode({
+        axios.post("/submit", this.encode({
             "form-name": "contact",
             ...this.form
           }), axiosConfig)
