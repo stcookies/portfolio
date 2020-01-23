@@ -181,6 +181,13 @@ export default {
     }
   },
   methods: {
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
     submitContactForm() {
       this.submitting = true;
       const axiosConfig = {
