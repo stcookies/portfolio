@@ -141,19 +141,19 @@
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
                   Full Name
                 </label>
-                <input v-model="form.name" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text">
+                <input v-model="form.name" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" name="name" type="text">
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
                   Email
                 </label>
-                <input v-model="form.email" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" type="text">
+                <input v-model="form.email" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" name="email" type="text">
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="message">
                   Message
                 </label>
-                <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" type="text"></textarea>
+                <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" name="message" type="text"></textarea>
               </div>
               <div class="pt-4">
                 <button type="submit" class="w-full text-center btn btn-primary">Submit</button>
