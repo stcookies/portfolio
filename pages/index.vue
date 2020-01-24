@@ -28,42 +28,15 @@
     <section class="pt-10 bg-gray-700 sm:mt-24">
       <div class="mx-auto my-container">
         <div class="flex flex-wrap justify-center xl:-mx-3">
-          <div class="w-full py-3 lg:px-2 sm:-mt-40 xl:py-10 xl:w-1/3 xl:px-3">
+          <div v-for="(skill, index) in skills" :key="index" class="w-full py-3 lg:px-2 sm:-mt-40 xl:py-10 xl:w-1/3 xl:px-3">
             <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card">
-              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
-                <defs/>
-                <path d="M20.59 12l-3.3-3.3a1 1 0 111.42-1.4l4 4a1 1 0 010 1.4l-4 4a1 1 0 01-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 01-1.42 1.4l-4-4a1 1 0 010-1.4l4-4A1 1 0 016.7 8.7L3.4 12zm7.56 8.24a1 1 0 01-1.94-.48l4-16a1 1 0 111.94.48l-4 16z" class="heroicon-ui"/>
-              </svg>
+              <Code v-if="skill.icon === 'code'" class="absolute bottom-0 right-0 z-0 h-56 text-gray-600 opacity-25 fill-current" />
+              <Cog v-else-if="skill.icon === 'cog'" class="absolute bottom-0 right-0 z-0 h-56 text-gray-600 opacity-25 fill-current" />
+              <Heart v-else-if="skill.icon === 'heart'" class="absolute bottom-0 right-0 z-0 h-56 text-gray-600 opacity-25 fill-current" />
               <div class="relative z-50 flex flex-col items-center h-full px-4 py-12 text-center">
-                <span class="text-xl font-semibold tracking-wide text-white uppercase">Front-End Development</span>
-                <p class="max-w-lg my-auto font-semibold text-indigo-300">I transform any design into a pixel-perfect, responsive, and performant interface that users will love.</p>
-                <span class="block mt-auto text-xs font-bold text-center text-white uppercase">JavaScript / Vue / Nuxt / React / HTML5 / CSS3</span>
-              </div>
-            </div>
-          </div>
-          <div class="w-full py-3 lg:px-2 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-40">
-            <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card">
-              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
-                <defs/>
-                <path d="M9 4.58V4c0-1.1.9-2 2-2h2a2 2 0 012 2v.58a8 8 0 011.92 1.11l.5-.29a2 2 0 012.74.73l1 1.74a2 2 0 01-.73 2.73l-.5.29a8.06 8.06 0 010 2.22l.5.3a2 2 0 01.73 2.72l-1 1.74a2 2 0 01-2.73.73l-.5-.3A8 8 0 0115 19.43V20a2 2 0 01-2 2h-2a2 2 0 01-2-2v-.58a8 8 0 01-1.92-1.11l-.5.29a2 2 0 01-2.74-.73l-1-1.74a2 2 0 01.73-2.73l.5-.29a8.06 8.06 0 010-2.22l-.5-.3a2 2 0 01-.73-2.72l1-1.74a2 2 0 012.73-.73l.5.3A8 8 0 019 4.57zM7.88 7.64l-.54.51-1.77-1.02-1 1.74 1.76 1.01-.17.73a6.02 6.02 0 000 2.78l.17.73-1.76 1.01 1 1.74 1.77-1.02.54.51a6 6 0 002.4 1.4l.72.2V20h2v-2.04l.71-.2a6 6 0 002.41-1.4l.54-.51 1.77 1.02 1-1.74-1.76-1.01.17-.73a6.02 6.02 0 000-2.78l-.17-.73 1.76-1.01-1-1.74-1.77 1.02-.54-.51a6 6 0 00-2.4-1.4l-.72-.2V4h-2v2.04l-.71.2a6 6 0 00-2.41 1.4zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z" class="heroicon-ui"/>
-              </svg>
-              <div class="relative z-50 flex flex-col items-center h-full px-4 py-12 text-center">
-                <span class="text-xl font-semibold tracking-wide text-white uppercase">Back-End Development</span>
-                <p class="max-w-lg my-auto font-semibold text-gray-800 text-indigo-300">I build restful APIs, as well as work with 3rd party APIs and services to create a fast and maintainable back-end for any app.</p>
-                <span class="block mt-auto text-xs font-bold text-center text-white uppercase">Node / Express / Rails / MongoDB / MySQL</span>
-              </div>
-            </div>
-          </div>
-          <div class="w-full py-3 lg:px-2 xl:py-10 xl:w-1/3 xl:px-3 xl:-mt-40">
-            <div class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card">
-              <svg class="absolute z-0 h-56 text-gray-600 opacity-25 fill-current" style="bottom:0; right:0;" viewBox="0 0 24 24">
-                <defs/>
-                <path d="M12.76 3.76a6 6 0 018.48 8.48l-8.53 8.54a1 1 0 01-1.42 0l-8.53-8.54a6 6 0 018.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 10-5.66-5.66l-1.46 1.47a1 1 0 01-1.42 0L9.83 5.17a4 4 0 10-5.66 5.66L12 18.66l7.83-7.83z" class="heroicon-ui"/>
-              </svg>
-              <div class="relative z-50 flex flex-col items-center h-full px-4 py-12 text-center">
-                <span class="text-xl font-semibold tracking-wide text-white uppercase">Well Tested Code</span>
-                <p class="max-w-lg my-auto font-semibold text-indigo-300">Code confidence is extremely important. That’s why I always build a robust suite of unit tests for any new feature added to a code base.</p>
-                <span class="block mt-auto text-xs font-bold text-center text-white uppercase">Mocha / Chai / RSpec</span>
+                <span class="text-xl font-semibold tracking-wide text-white uppercase">{{ skill.title }}</span>
+                <p class="max-w-lg my-auto font-semibold text-indigo-300">{{ skill.description }} </p>
+                <span class="block mt-auto text-xs font-bold text-center text-white uppercase">{{ skill.tech }}</span>
               </div>
             </div>
           </div>
@@ -134,32 +107,49 @@
           <p class="pr-16 mt-6 text-lg text-indigo-300">Have a project or position you think I’d be a good fit for? Just want to say hello? Please reach out!</p>
         </div>
         <div class="w-full py-8 lg:w-2/3 xl:w-1/2">
-          <div class="-mb-48">
-            <form @submit.prevent="handleSubmit" v-if="!submitting" data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact" class="max-w-2xl p-10 bg-gray-100 rounded shadow-xl">
+          <transition leave-active-class="animated fadeOut" @afterLeave="showSubmitMessage = true">
+            <form class="max-w-2xl p-10 -mb-48 bg-gray-100 rounded shadow-xl" @submit.prevent="handleSubmit" v-if="!submitDone" data-netlify="true" method="post" data-netlify-honeypot="bot-field" name="contact">
               <input type="hidden" name="form-name" value="contact" />
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
                   Full Name
                 </label>
-                <input v-model="form.name" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" name="name" type="text">
+                <input @click="form.name.hasError = false" v-model="form.name.value" :class="{ 'border-red-500' : form.name.hasError }" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" name="name" type="text">
+                <p v-show="form.name.hasError" class="mt-2 text-xs italic text-red-500">Name is required</p>
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
                   Email
                 </label>
-                <input v-model="form.email" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" name="email" type="text">
+                <input @click="form.email.hasError = false" v-model="form.email.value" :class="{ 'border-red-500' : form.email.hasError }" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" name="email" type="text">
+                <p v-show="form.email.hasError" class="mt-2 text-xs italic text-red-500">Email is required</p>
               </div>
               <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="message">
                   Message
                 </label>
-                <textarea v-model="form.message" rows="5" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" name="message" type="text"></textarea>
+                <textarea @click="form.message.hasError = false" v-model="form.message.value" rows="5" :class="{ 'border-red-500' : form.message.hasError }" class="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="message" name="message" type="text"></textarea>
+                <p v-show="form.message.hasError" class="mt-2 text-xs italic text-red-500">Message is required</p>
               </div>
               <div class="pt-4">
-                <button type="submit" class="w-full text-center btn btn-primary">Submit</button>
+                <button type="submit" :class="{ 'bg-gray-600 hover:bg-gray-600' : submitting }" class="w-full text-center btn btn-primary">{{ submitting ? 'Sending...' : 'Send' }}</button>
               </div>
             </form>
-          </div>
+          </transition>
+          <transition enter-active-class="animated fadeIn">
+            <div v-if="submitDone && showSubmitMessage" class="flex justify-center p-10 border-2 border-indigo-500 rounded shadow-xl">
+              <div v-if="!submitError" class="flex">
+                <span class="pr-4 text-3xl font-semibold text-white">Message sent!</span>
+                <svg class="w-10 h-10 text-green-400 fill-current" viewBox="0 0 24 24">
+                  <defs/>
+                  <path d="M23 0l-4.5 16.5-6.097-5.43 5.852-6.175-7.844 5.421L5 9l18-9zM12 12.501V18l2.193-3.323L12 12.501zm-8.698 6.825l-1.439-.507 5.701-5.215L9 14l-5.698 5.326zm3.262 4.287l-1.323-.565 4.439-4.503L11 19l-4.436 4.613zM2.481 24L1 23.493l8-7.89 1.437.397-7.956 8z"/>
+                </svg>
+              </div>
+              <div v-else>
+                <span class="text-xl font-semibold text-red-400">There was an issue delivering your message. Please reach out to me directly at hello@stephencook.me</span>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
     </section>
@@ -168,18 +158,28 @@
 
 <script>
 import axios from 'axios';
+import Code from '~/assets/img/code.svg?inline';
+import Cog from '~/assets/img/cog.svg?inline';
+import Heart from '~/assets/img/heart.svg?inline';
 export default {
+  components: {
+    Code,
+    Cog,
+    Heart
+  },
   data() {
     return {
       form: {
-        name: null,
-        email: null,
-        message: null
+        name: { value: null, hasError: false },
+        email: { value: null, hasError: false },
+        message: { value: null, hasError: false }
       },
       submitting: false,
-      submitSuccess: false,
+      submitDone: false,
+      showSubmitMessage: false,
+      submitError: false,
       skills: [
-        { title : 'Front-End Development', description: 'I transform any design into a pixel-perfect, responsive, and performant interface that users will love.', tech: ' JavaScript / Vue / Nuxt / React', icon: 'code' },
+        { title : 'Front-End Development', description: 'I transform any design into a pixel-perfect, responsive, and performant interface that users will love.', tech: ' JavaScript / Vue / Nuxt / React / HTML / CSS', icon: 'code' },
         { title : 'Back-End Development', description: 'I build restful APIs, as well as work with 3rd party APIs and services to create a fast and maintainable back-end for any app.', tech: 'Node / Express / Rails / MongoDB / MySQL', icon: 'cog' },
         { title : 'Well Tested Code', description: 'Code confidence is extremely important. That’s why I always build a robust suite of unit tests for any new feature added to a code base.', tech: 'Mocha / Chai / RSpec', icon: 'heart' },
       ],
@@ -199,6 +199,12 @@ export default {
         .join("&");
     },
     handleSubmit() {
+      if (!this.form.name.value || !this.form.email.value || !this.form.message.value) {
+        this.form.name.hasError = !this.form.name.value;
+        this.form.email.hasError = !this.form.email.value;
+        this.form.message.hasError = !this.form.message.value;
+        return;
+      }
       if (process.env.NODE_ENV === 'production') {
         this.submitting = true;
         const axiosConfig = {
@@ -210,18 +216,19 @@ export default {
           }), axiosConfig)
         .then(() => {
           this.submitting = false;
-          this.submitSuccess = true;
+          this.submitDone = true;
         })
         .catch((err) => {
-          console.log(err);
+          this.submitError = true;
         })
       }
       else {
         this.submitting = true;
         setTimeout(() => {
           this.submitting = false;
-          this.submitSuccess = true;
-        }, 5000);
+          this.submitDone = true;
+          this.submitError = false;
+        }, 2000);
       }
     }
   }

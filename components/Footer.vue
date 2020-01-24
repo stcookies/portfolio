@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-900 border-t border-indigo-500">
     <div class="flex flex-col py-32 mx-auto my-container">
-      <div>
+      <div class="mt-32 lg:mt-0">
         <img class="w-name-logo" src="~/assets/img/name-logo.png" />
       </div>
       <div class="mt-5 font-semibold text-white sm:pt-0 sm:flex">
