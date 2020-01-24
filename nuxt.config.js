@@ -5,11 +5,11 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || 'Stephen Cook / Web Developer',
+    title: 'Stephen Cook / Web Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || 'I’m a Cincinnati based developer passionate about creating fast, efficient, and well-tested web apps using the most up to date technologies and tools.' }
+      { hid: 'description', name: 'description', content: 'I’m a Cincinnati based developer passionate about creating fast, efficient, and well-tested web apps using the most up to date technologies and tools.' }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "favicons/favicon.ico" },
