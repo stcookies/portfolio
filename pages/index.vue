@@ -212,7 +212,9 @@ export default {
         };
         axios.post("/submit", this.encode({
             "form-name": "contact",
-            ...this.form
+            name: this.form.name.value,
+            email: this.form.email.value,
+            message: this.form.message.value
           }), axiosConfig)
         .then(() => {
           this.submitting = false;
