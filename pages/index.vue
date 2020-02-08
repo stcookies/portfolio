@@ -42,8 +42,8 @@
           Node, and am always eager to learn more about emerging technologies.
         </p>
         <div class="pt-8">
-          <a class="mr-4 btn btn-primary" href="#">My Work</a>
-          <a class="mt-4 btn btn-secondary sm:mt-0" href="#">Contact</a>
+          <button class="mr-4 btn btn-primary" v-scroll-to="'#projects'">My Work</button>
+          <button class="mt-4 btn btn-secondary" v-scroll-to="'#contact'">Contact</button>
         </div>
       </div>
     </section>
@@ -53,7 +53,7 @@
           <div
             v-for="(skill, index) in skills"
             :key="index"
-            class="w-full py-3 lg:px-2 sm:-mt-40 xl:py-10 xl:w-1/3 xl:px-3"
+            class="w-full my-3 lg:px-2 lg:-mt-40 xl:py-10 lg:w-1/3 xl:px-3"
           >
             <div
               class="relative overflow-hidden bg-gray-800 border-2 border-indigo-500 rounded shadow-xl h-skill-card"
@@ -373,6 +373,7 @@ export default {
           title: "Trip Me",
           technologies: "Vue / Tailwind CSS",
           link: "https://trip-me.netlify.com",
+          github: "https://github.com/Stefarian/trip-me",
           img: "tripme",
           description:
             "A landing page for a mock travel agency, Trip Me, that provides pre-packaged trip itineraries for clients. The page is fully responsive with design considerations taken into account for every screen size."
