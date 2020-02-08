@@ -13,12 +13,12 @@
         >
           <defs>
             <style>
-  .cls-1 {
-    fill: #faf7fb;
-  }
-  .cls-2 {
-    fill: #c4c4c4;
-  }
+              .cls-1 {
+                fill: #faf7fb;
+              }
+              .cls-2 {
+                fill: #c4c4c4;
+              }
             </style>
           </defs>
           <title>logo-white</title>
@@ -60,31 +60,38 @@
           </button>
         </div>
       </div>
-      <nav :class="isOpen ? 'block' : 'hidden'" class="px-8 py-4 sm:py-0 sm:block">
+      <nav
+        :class="isOpen ? 'block' : 'hidden'"
+        class="px-8 py-4 sm:py-0 sm:block"
+      >
         <div class="font-semibold text-white sm:flex">
           <a
             href="#"
             v-scroll-to="'#about'"
             class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300"
-          >About</a>
+            >About</a
+          >
           <span class="hidden cursor-default sm:block sm:px-1">/</span>
           <a
             href="#"
             v-scroll-to="'#experience'"
             class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300"
-          >Experience</a>
+            >Experience</a
+          >
           <span class="hidden cursor-default sm:block sm:px-1">/</span>
           <a
             href="#"
             v-scroll-to="'#projects'"
             class="block pt-3 sm:pt-0 sm:py-0 sm:px-4 hover:text-indigo-300"
-          >Projects</a>
+            >Projects</a
+          >
           <span class="hidden cursor-default sm:block sm:px-1">/</span>
           <a
             href="#"
             v-scroll-to="'#contact'"
             class="block pt-3 sm:pt-0 sm:px-4 hover:text-indigo-300"
-          >Contact</a>
+            >Contact</a
+          >
         </div>
       </nav>
     </header>
