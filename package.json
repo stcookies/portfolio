@@ -13,7 +13,7 @@
   "dependencies": {
     "@nuxtjs/svg": "^0.1.6",
     "animate.css": "^3.7.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "nuxt": "^2.11.0",
     "vue-scrollto": "^2.17.1"
   },
